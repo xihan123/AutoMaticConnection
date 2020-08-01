@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ACTW</string>
+    <string name="open_wifi">打开wifi设置</string>
+    <string name="connect_wifi">一键连接</string>
+    <string name="ssid_wifi">在此可以设定指定SSID</string>
+
+    <string name="txtssid_wifi">SSID:</string>
+    <string name="txtpass_wifi">PASS:</string>
+
+</resources>

@@ -1,0 +1,35 @@
+apply plugin: 'AndResGuard'
+
+andResGuard {
+    mappingFile = file("./resource_mapping.txt")
+    use7zip = true
+    useSign = true
+    keepRoot = false
+    mergeDuplicatedRes = true
+    // add <yourpackagename>.R.drawable.icon into whitelist.
+    // because the launcher will get the icon with his name
+    whiteList = ["R.mipmap.ic_launcher",
+                 //https://docs.fabric.io/android/crashlytics/build-tools.html
+
+                 "R.id.*"]
+    compressFilePattern = ["*.png",
+                           "*.jpg",
+                           "*.jpeg",
+                           "*.gif",
+                           "resources.arsc"]
+    sevenzip {
+        artifact = "com.tencent.mm:SevenZip:1.2.18"
+        //path = "/usr/local/bin/7za"
+    }
+}
+
+    /**
+     * 可选： 如果不设置则会默认覆盖assemble输出的apk
+     **/
+    // finalApkBackupPath = "${project.rootDir}/final.apk"
+
+    /**
+     * 可选: 指定v1签名时生成jar文件的摘要算法
+     * 默认值为“SHA-1”
+     **/
+    // digestalg = "SHA-256"
